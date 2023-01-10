@@ -11,5 +11,12 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSearch(inputValue): void {
+    const options = {
+      value:  inputValue.target.value,
+      name: 'keyword'
+    }
+    // this.seachInfo = options;
+    // this.keyword.patchValue(this.seachInfo.value);
+  }
 }

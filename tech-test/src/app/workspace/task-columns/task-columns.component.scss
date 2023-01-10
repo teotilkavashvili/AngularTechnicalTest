@@ -1,0 +1,29 @@
+
+
+
+
+.taskList{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fefefe;
+    border-bottom: 1px solid #e5e5e5;
+    padding:5px;
+
+    .task{
+        width: 400px;
+        display: flex;
+
+        &_name{
+            margin-left: 10px;
+        }
+    }
+    .icons{
+        display: flex;
+
+        .imgIcon {
+            margin-left: 24px;
+            padding: 9px 0px;
+          }
+    }
+    
+}

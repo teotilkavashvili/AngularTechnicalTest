@@ -1,3 +1,23 @@
-<p>
-  search works!
-</p>
+<div class="wrap">
+  <div class="search">
+    <div class="searchBox">
+      <div class="search_title">
+        <div class="search_name">Board</div>
+      </div>
+      <div class="inputDiv">
+        <input 
+          style="width: 100%;"
+          type="text" 
+          placeholder="Search"
+          (input)="onSearch($event)"
+          id="search" />
+        <div 
+        class="search_icon" 
+        (click)="onSearch($event)">
+          <img src="/assets/images/search-icon.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
