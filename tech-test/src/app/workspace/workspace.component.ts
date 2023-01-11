@@ -3,6 +3,8 @@ import { TaskService } from '../services/task.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateEditTaskComponent } from './create-edit-task/create-edit-task.component';
 import { AlertDialogComponent } from '../dialog/alert-dialog/alert-dialog.component';
+import { Subject } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { AlertDialogComponent } from '../dialog/alert-dialog/alert-dialog.compon
   styleUrls: ['./workspace.component.scss']
 })
 export class WorkspaceComponent implements OnInit {
-  @Output() updateData = new EventEmitter<boolean>();
+  updateData: Subject<boolean> = new Subject();
 
   constructor(
     private taskService: TaskService,
@@ -27,29 +29,30 @@ export class WorkspaceComponent implements OnInit {
         width: '600px',
         data: {}
       });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log("result",result);
+    dialogRef.afterClosed().
+    pipe(take(1)).
+    subscribe(result => {
       if (result == null || result.isEmpty)
         return;
       this.taskService.createTask(result).subscribe(
         (response) => {
-          this.updateData.emit(true);          
-          const dialogRef = this.dialog.open(AlertDialogComponent,{
-            data:{
-              message: 'success',
-            },
-          });
+          this.updateData.next(true);          
+          this.alertMessage('success')
         },
         (error) => {
-          const dialogRef = this.dialog.open(AlertDialogComponent,{
-            data:{
-              message: 'error',
-            },
-          });
+          this.updateData.next(false);          
+          this.alertMessage('error');
         },
       );
     });
 
   }
- 
+  alertMessage(message:string){
+    this.dialog.open(AlertDialogComponent,{
+      data:{
+        message: message,
+      },
+    });
+  }
+  
 }

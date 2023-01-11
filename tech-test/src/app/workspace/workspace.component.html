@@ -3,7 +3,7 @@
         <button
         class="btn btn_add addCostumer"
         mat-raised-button
-        matTooltip="დამატება"
+        matTooltip="Add Task"
         (click)="addTask()"
         >
          Add Task
@@ -11,6 +11,7 @@
     </div>  
     <div class="board">       
         <app-task-columns
+        [refreshTable]="updateData"
         ></app-task-columns>
     </div>   
 </div>

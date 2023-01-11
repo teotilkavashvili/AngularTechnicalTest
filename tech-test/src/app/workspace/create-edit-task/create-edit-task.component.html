@@ -1,20 +1,20 @@
 
-<div mat-dialog-actions class="dialogHeader">
+<div mat-dialog-actions class="dialog-Header">
   <h4 *ngIf="isCreate">Create Task</h4> 
   <h4 *ngIf="!isCreate">Edit Task</h4> 
-  <button mat-button (click)="onNoClick()" class="removeDialog">
-    <img class="closeFilter" src="/assets/images/header-close.svg" />
+  <button mat-button (click)="onNoClick()" class="remove-Dialog">
+    <img class="close-Filter" src="/assets/images/header-close.svg" />
   </button>
 </div>
 
 
-<div mat-dialog-content class="contetntClass">
+<div mat-dialog-content class="contetnt-Class">
       <form [formGroup]="registerTaskForm" (ngSubmit)="onSubmit()">
           <div class="form-row center">
               <div class="form-group col-6">               
                 <mat-form-field 
                 appearance="outline" 
-                [ngClass]="{ 'is-invalid': submitted && f.label.errors }">
+                [ngClass]="{ 'is-invalid': submitted && validControls.label.errors }">
                 <mat-label>Label</mat-label>
                   <input
                     type="text"
@@ -24,14 +24,14 @@
                     formControlName="label"                    
                   />
                 </mat-form-field>
-                  <div *ngIf="submitted && f.label.errors" class="invalid-feedback">
-                      <div *ngIf="f.label.errors.required">label is required</div>
+                  <div *ngIf="submitted && validControls.label.errors" class="invalid-feedback">
+                      <div *ngIf="validControls.label.errors.required">label is required</div>
                   </div>
               </div>
               <div class="form-group col-6">               
                 <mat-form-field 
                 appearance="outline" 
-                [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
+                [ngClass]="{ 'is-invalid': submitted && validControls.description.errors }">
                 <mat-label>Description</mat-label>
                   <input
                     type="text"
@@ -41,14 +41,14 @@
                     formControlName="description"                    
                   />
                 </mat-form-field>
-                  <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
-                      <div *ngIf="f.description.errors.required">description is required</div>
+                  <div *ngIf="submitted && validControls.description.errors" class="invalid-feedback">
+                      <div *ngIf="validControls.description.errors.required">description is required</div>
                   </div>
               </div>
               <div class="form-group col-6">               
                 <mat-form-field 
                 appearance="outline" 
-                [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
+                [ngClass]="{ 'is-invalid': submitted && validControls.category.errors }">
                 <mat-label>Category</mat-label>
                   <input
                     type="text"
@@ -58,8 +58,8 @@
                     formControlName="category"                    
                   />
                 </mat-form-field>
-                  <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
-                      <div *ngIf="f.category.errors.required">category is required</div>
+                  <div *ngIf="submitted && validControls.category.errors" class="invalid-feedback">
+                      <div *ngIf="validControls.category.errors.required">category is required</div>
                   </div>
               </div>
               <div class="form-group col-6" *ngIf="!isCreate && data.done">               

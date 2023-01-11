@@ -3,21 +3,25 @@
         (outPutKeyword)="onSearchTask($event)"
 ></app-search>
 
-<div class="taskList" *ngFor="let task of tasks">
+<div class="task-List" *ngFor="let task of tasks">
     <div class="task">
       <div class="task_status">
         <mat-checkbox 
         [checked]="task.done"
-        (change)="changeStatus($event.checked, task.id)"
+        (change)="changeStatus($event.checked, task)"
         ></mat-checkbox>
       </div>
-      <div class="task_name">
+      <div class="task-name">
         {{task.label}}
       </div>
     </div>
     <div class="icons">
-      <div class="imgIcon" (click)="editTask(task)"><img src="/assets/images/pencil-edit.svg" alt="" /></div>
-      <div class="imgIcon" (click)="deleteTask(task.id)"><img src="/assets/images/delete.svg" alt="" /></div>
+      <div class="imgIcon" (click)="editTask(task)">
+        <img src="/assets/images/pencil-edit.svg" alt="edit" />
+      </div>
+      <div class="imgIcon" (click)="deleteTask(task.id)">
+        <img src="/assets/images/delete.svg" alt="delete" />
+      </div>
     </div>
 
 </div>

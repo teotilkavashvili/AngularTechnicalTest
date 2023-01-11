@@ -27,32 +27,6 @@
       "label": "Home work",
       "description": "bla blA",
       "category": "HARD"
-    },
-    {
-      "id": "f1e4a2bb-5f17-4542-9fbe-35b8f9f18fd4",
-      "done": "",
-      "label": "create project",
-      "description": "hard level",
-      "category": "123"
-    },
-    {
-      "id": "ce1bc588-9d95-4db8-97c2-6baa016b4d14",
-      "label": "cool 455",
-      "description": "test done",
-      "category": "test done",
-      "done": false
-    },
-    {
-      "id": "a3b83a1d-86d9-4a9c-97f1-a497827ff85f",
-      "label": "51616",
-      "description": "5166",
-      "category": "1566165"
-    },
-    {
-      "id": "79a83ad3-0d23-44f9-9180-b11c9a48d7ed",
-      "label": "test",
-      "description": "test",
-      "category": "test"
     }
   ]
 }

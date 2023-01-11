@@ -11,12 +11,10 @@ import { takeUntil, debounceTime, distinctUntilChanged } from "rxjs/operators";
 export class SearchComponent implements OnInit {
   @ViewChild('inputElement', { static: true }) inputElement: ElementRef;
   @Output() outPutKeyword = new EventEmitter<string>();
-  searchInfo:any;
+  searchInfo: string | number;
   keyword = new FormControl(null);
   unsubscribe$ = new Subject<void>();
   key:string;
-
-  constructor() { }
 
   ngOnInit() {
     this.keyword.valueChanges
@@ -29,13 +27,7 @@ export class SearchComponent implements OnInit {
   }
 
   onSearch(inputValue): void {
-    console.log("inputValue",inputValue)
-    // const options = {
-    //   value:  inputValue.target.value,
-    //   name: 'keyword'
-    // }
     this.searchInfo = inputValue;
-    // this.keyword.patchValue(this.searchInfo.value);
     this.key=inputValue.target.value
     this.outPutKeyword.emit(this.key);
   }

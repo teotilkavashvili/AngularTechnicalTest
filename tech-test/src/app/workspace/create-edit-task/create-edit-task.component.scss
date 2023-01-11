@@ -1,11 +1,11 @@
-.dialogHeader {
+.dialog-Header {
     display: flex;
     justify-content: space-between;
     flex-direction: inherit;
     margin-bottom:0.5px;
   }
 
-  .removeDialog{
+  .remove-Dialog{
     border: none;
     background-color: white;
   }
@@ -24,7 +24,6 @@
   .mat-form-field {
     font-size: inherit;
     font-weight: 400;
-    // line-height: 1.5 !important;
     font-family: Roboto, "Helvetica Neue", sans-serif;
   }
   ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
@@ -33,9 +32,6 @@
   ::ng-deep .mat-form-field-wrapper {
     padding-bottom: 0.4px
   }
-  // ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
-  //   padding: 0.615em 0 0.615em 0;
-  // }
 
   .confirm{
     width:100% ; 

@@ -18,14 +18,11 @@ export class AlertDialogComponent {
         this.cancelButtonText = data.buttonText.cancel || this.cancelButtonText;
       }
     }
-    this.dialogRef.updateSize('50vw','100vw')
+    this.dialogRef.updateSize('50vw','100vw');
     setTimeout(() => {
       this.dialogRef.close(true)
-    }, 1000)
+    }, 1000);
   }
 
-  onConfirmClick(): void {
-    this.dialogRef.close(true);
-  }
 
 }

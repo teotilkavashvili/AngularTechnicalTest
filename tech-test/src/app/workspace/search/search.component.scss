@@ -1,56 +1,19 @@
-
-.wrap {
-  width: 100%;
-  margin: auto;
-  // border-radius: 2px;
-  padding-bottom: 0;
-  margin-bottom: 12px;
-  border-bottom: 1px solid #e5e5e5;
-  padding:5px;
-}
-
 .search {
   width: 100%;
   margin: auto;
 }
 
-.searchBox {
-  display: flex;
-  position: relative;
-}
-
-.search_title {
-  display: flex;
-  align-items: center;
-  z-index: 5;
-}
-.search_name {
-  font-size: 16px;
-  font-weight: 600;
-  color: #312e34;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-}
-
-.filter_btn {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding-right: 24px;
-}
-
-.filter_btn:hover {
-  cursor: pointer;
-}
-
-
 .wrap {
   display: flex;
   flex-direction: column;
-  background-color: #fefefe;
+  background-color: #F4F6F6 ;
   border-radius: 4px;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #EAEDED;
+  padding:5px;
 
   .search {
     display: flex;
@@ -66,36 +29,25 @@
       justify-content: space-between;
       height: 100%;
 
-      .search_title {
-        flex: 1;
-        padding:20px 24px;
-      }
-
-      .inputDiv {
-        // display: flex;
-        // align-items: center;
-        // background: #f4f6f8;
-        // border-radius: 4px;
-        // height: 40px;
-        // padding: 0 14px;
+      .input-Div {
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 8px 16px 8px 12px;
         gap: 8px;
-        width: 405px;
         height: 40px;
-        border: 1px solid #EAEBF0;
+        border: 1px solid #AEB6BF;
         border-radius: 4px;
 
-        .search_icon {
-          cursor: pointer;
-          // margin-right: 16px;         
+        .search-icon {
+          cursor: pointer;       
           color: #6F8196;
         }
 
         input {
+          width: 100%;
           border: none;
           background-color: transparent;
           font-family: 'Inter';
@@ -106,14 +58,6 @@
           color: #182939;
           opacity: 0.5;
         }
-      }
-
-      .divider {
-        height: 100%;
-        width: 2px ;
-        background-color: #F6F5FA;
-        margin-left: 28px;
-        margin-right: 24px;
       }
     }
   }

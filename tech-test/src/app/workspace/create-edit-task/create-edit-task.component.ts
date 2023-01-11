@@ -25,11 +25,7 @@ export class CreateEditTaskComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(this.data.id){
-      this.isCreate=false
-    }else{
-      this.isCreate=true;
-    }    
+    this.isCreate=!this.data.id   
     this.registerTaskForm = this.formBuilder.group({
       id: [''],
       done:new FormControl({ value: '', disabled: this.disabled }),
@@ -40,42 +36,33 @@ export class CreateEditTaskComponent implements OnInit {
     });
   }
 
-  get f() { return this.registerTaskForm.controls; }
+  get validControls() { return this.registerTaskForm.controls; }
 
   onSubmit() {
-    console.log("form",this.registerTaskForm.value);
     this.submitted = true;
     if (this.registerTaskForm.invalid) {
       return;
-    }else {
-      if (!this.isCreate) {
+    }
+    if (!this.isCreate) {
         this.registerTaskForm.patchValue({
           id: this.data.id,
           done:this.data.done
         });
-      }else{        
+    }else{        
         const uniqueId=uuid();
         this.registerTaskForm.patchValue({
           id: uniqueId,
           done:false
         });
-      }
-      var clickedButtonName = document.activeElement.getAttribute("Name");
-      let isCostumerSubmitPermitted = this.setTaskStatus(
-        clickedButtonName
-      );
     }
+      const clickedButtonName = document.activeElement.getAttribute("Name");
+       this.setTaskStatus(clickedButtonName);    
   }
 
   setTaskStatus(btnName) {
     let isPermitted = true;
     switch (btnName) {
       case "save": {
-        console.log("save")
-        this.taskService.createTask(this.registerTaskForm.value).subscribe(
-              (response) => {
-                console.log(response)
-              },)
         this.dialogRef.close(this.registerTaskForm.value);
         break;
       }

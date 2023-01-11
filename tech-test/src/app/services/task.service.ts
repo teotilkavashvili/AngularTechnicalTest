@@ -16,25 +16,25 @@ export class TaskService {
 
   public getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(
-      `${environment.baseUrl}/tasks`
+      `${this.baseUrl}/tasks`
     );
   }
 
   public createTask(task: Task): Observable<Task> {
     return this.http.post<Task>(
-      `${environment.baseUrl}/tasks`, task
+      `${this.baseUrl}/tasks`, task
     );
   }
 
   public deleteTask(id: number): Observable<Task[]> {
     return this.http.delete<Task[]>(
-      `${environment.baseUrl}/tasks/${id}`
+      `${this.baseUrl}/tasks/${id}`
     );
   }
 
-  public editTask(task: any): Observable<Task> {
-    return this.http.patch<any>(
-      `${environment.baseUrl}/tasks/${task.id}`, task
+  public editTask(task?: Task): Observable<Task> {
+    return this.http.patch<Task>(
+      `${this.baseUrl}/tasks/${task.id}`, task
     );
   }
 
