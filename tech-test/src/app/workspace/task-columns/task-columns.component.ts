@@ -118,9 +118,4 @@ export class TaskColumnsComponent implements OnInit {
         });
       })
   }
-  updateData(status){
-    if (status)
-    this.fillTaskGrid();
-    
-  }
 }

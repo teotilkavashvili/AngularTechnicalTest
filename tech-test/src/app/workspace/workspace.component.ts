@@ -33,6 +33,7 @@ export class WorkspaceComponent implements OnInit {
         return;
       this.taskService.createTask(result).subscribe(
         (response) => {
+          this.updateData.emit(true);          
           const dialogRef = this.dialog.open(AlertDialogComponent,{
             data:{
               message: 'success',
