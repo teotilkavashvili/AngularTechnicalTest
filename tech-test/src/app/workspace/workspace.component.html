@@ -1,8 +1,15 @@
 <div class="workspace">
-    <div class="board">
-        <app-search></app-search>
+    <div class="actions">
+        <button
+        class="btn btn_add addCostumer"
+        mat-raised-button
+        matTooltip="დამატება"
+        (click)="addTask()"
+        >
+         Add Task
+        </button>
+    </div>  
+    <div class="board">       
         <app-task-columns></app-task-columns>
     </div>   
 </div>
-
-

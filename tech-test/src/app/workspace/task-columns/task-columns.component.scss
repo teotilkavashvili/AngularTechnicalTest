@@ -1,7 +1,3 @@
-
-
-
-
 .taskList{
     display: flex;
     justify-content: space-between;
@@ -23,6 +19,7 @@
         .imgIcon {
             margin-left: 24px;
             padding: 9px 0px;
+            cursor: pointer;
           }
     }
     
